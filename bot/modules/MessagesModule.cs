@@ -17,11 +17,11 @@ public class MessagesModule(GatewayClient client)
 
     private string BuildNftMessageSection(Rca rca)
     {
-        var nftInfo = "**NFT info:**\n";
-        nftInfo += $"Price: {rca.Price.ValueToPrice()} • "
-                   + $"Amount: {rca.Count} • "
-                   + $"Author: [{rca.AuthorName}]({rca.AuthorUrl})\n";
-        return nftInfo;
+        return "**NFT info:**" 
+               + "\n"
+               + $"Price: {rca.Price.ValueToPrice()} • "
+               + $"Amount: {rca.Count} • "
+               + $"Author: [{rca.AuthorName}]({rca.AuthorUrl})\n";
     }
 
     private string BuildAvatarMessageSection(Rca rca)

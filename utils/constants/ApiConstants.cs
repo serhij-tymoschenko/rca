@@ -1,6 +1,6 @@
 namespace rca.utils.constants;
 
-public class ApiConstants
+public static class ApiConstants
 {
     public const string RedditEndpoint = "https://www.reddit.com";
     public const string AuthRedditEndpoint = "https://accounts.reddit.com";
@@ -13,6 +13,5 @@ public class ApiConstants
     public const string UserAgent = "Reddit/Version 2023.21.0/Build 956283/Android 13";
     public const string ClientId = "ohXpoqrZYub1kg";
 
-    public const string StorefrontRegex = "storefront_nft_.{26}";
-    public const string PostDataRegex = @"name=""postData""\s+value=""(?<json>(?:[^""\\]|\\.)*)""";
+    
 }

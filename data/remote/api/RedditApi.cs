@@ -44,7 +44,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
             }
 
             var postData = Regex
-                .Match(content, ApiConstants.PostDataRegex)
+                .Match(content, DataRegex.PostDataRegex)
                 .Groups["json"]
                 .Value;
 
@@ -111,7 +111,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
 
             var divInnerHtml = recentlyReleasedHeader.ParentNode.InnerHtml;
             var storefrontIds = Regex
-                .Matches(divInnerHtml, ApiConstants.StorefrontRegex)
+                .Matches(divInnerHtml, DataRegex.StorefrontRegex)
                 .ToList()
                 .ConvertAll(match => match.Value)
                 .ToHashSet()
@@ -159,7 +159,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
             var resContent = await resMessage.Content.ReadAsStringAsync();
 
             var storefrontIds = Regex
-                .Matches(resContent, ApiConstants.StorefrontRegex)
+                .Matches(resContent, DataRegex.StorefrontRegex)
                 .ToList()
                 .ConvertAll(match => match.Value)
                 .ToHashSet()

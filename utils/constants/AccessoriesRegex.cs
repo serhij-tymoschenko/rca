@@ -1,6 +1,6 @@
 namespace rca.utils.constants;
 
-public class AccessoriesRegex
+public static class AccessoriesRegex
 {
     public const string Right = "accessory_(.{11})$";
     public const string Left = "accessory_back_(.{11})$";

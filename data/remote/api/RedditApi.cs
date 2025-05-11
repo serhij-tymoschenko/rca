@@ -82,7 +82,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
             Headers =
             {
                 { "accept", "text/vnd.reddit.partial+html, text/html;q=0.9" },
-                { "User-agent", "RCA" },
+                { "User-agent", ApiConstants.UserAgent },
                 {
                     "Authorization",
                     $"bearer {Config.REDDIT_API_KEY}"
@@ -148,7 +148,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
                     "Authorization",
                     $"bearer {Config.REDDIT_API_KEY}"
                 },
-                { "User-Agent", "Rca" }
+                { "User-Agent", ApiConstants.UserAgent }
             }
         };
 

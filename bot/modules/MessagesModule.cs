@@ -9,12 +9,10 @@ public class MessagesModule(GatewayClient client)
 {
     private string BuildTitleSection(MessageType type)
     {
-        var title = "";
         if (type is MessageType.Rca)
-            title += "**New rca!**\n";
-        else
-            title += "**New contract!**\n";
-        return title;
+            return "**New rca!**\n";
+        
+        return "**New contract!**\n";
     }
 
     private string BuildNftMessageSection(Rca rca)

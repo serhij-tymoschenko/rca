@@ -78,9 +78,8 @@ public class DataModule(FirestoreDb db)
                 .Document("contract");
 
             var snapshot = await docRef.GetSnapshotAsync();
-
-            string? value;
-            snapshot.TryGetValue<string>("last_entity_id", out value);
+            
+            snapshot.TryGetValue<string>("last_entity_id", out string? value);
             return value ?? "";
         }
         catch (Exception e)

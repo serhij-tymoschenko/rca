@@ -12,6 +12,4 @@ public static class ApiConstants
 
     public const string UserAgent = "Reddit/Version 2023.21.0/Build 956283/Android 13";
     public const string ClientId = "ohXpoqrZYub1kg";
-
-    
 }

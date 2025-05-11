@@ -5,7 +5,7 @@ using rca.data.db.modules;
 
 namespace rca.data.db;
 
-public class Database
+public static class Database
 {
     private static FirestoreDb? _db;
     private static DataModule? _dataModule;

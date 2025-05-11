@@ -12,7 +12,7 @@ public static class AvatarStorefrontToRca
         var title = node.Item.Nft.Title;
         var description = node.Item.Nft.Description;
         var authorName = node.Artist.RedditorInfo.DisplayName;
-        var authorShopUrl =
+        var authorUrl =
             $"https://www.reddit.com/avatar/shop/artist/{node.Artist.RedditorInfo.PrefixedName.Substring(2)}";
         var count = node.Item.Drop.Size;
         var imageUrl = node.Item.Benefits.AvatarOutfit.PreRenderImage.Url;
@@ -20,23 +20,21 @@ public static class AvatarStorefrontToRca
         var shopUrl = $"https://www.reddit.com/avatar/shop/product/{node.Id}";
         var traits = GetRcaTraits(node.Item.Benefits.AvatarOutfit.AccessoryIds,
             node.Item.Benefits.AvatarOutfit.BackgroundImage.Url);
-
-        var rca = new Rca
+        
+        return new Rca
         {
             Name = title,
             Description = description,
             AuthorName = authorName,
-            AuthorUrl = authorShopUrl,
+            AuthorUrl = authorUrl,
             Count = count,
             ImageUrl = imageUrl,
             Price = price,
             ShopUrl = shopUrl,
             Traits = traits
         };
-
-        return rca;
     }
-
+    
     private static RcaTraits GetRcaTraits(List<string> accessoryIds, string backgroundUrl)
     {
         var eyes = "";
@@ -75,8 +73,8 @@ public static class AvatarStorefrontToRca
 
             if (Regex.IsMatch(id, AccessoriesRegex.Hats)) hats = Regex.Match(id, AccessoriesRegex.Hats).Groups[1].Value;
         });
-
-        var traits = new RcaTraits
+        
+        return new RcaTraits
         {
             BackgroundUrl = backgroundUrl,
             BottomsUrl = GetAccessoryUrl(bottoms),
@@ -89,14 +87,11 @@ public static class AvatarStorefrontToRca
             HairBackUrl = GetAccessoryUrl(hairBack),
             HatsUrl = GetAccessoryUrl(hats)
         };
-        return traits;
     }
 
     private static string GetAccessoryUrl(string? accessoryId)
     {
         if (accessoryId == null) return null;
-
-        var url = $"https://i.redd.it/snoovatar/snoo_assets/submissions/{accessoryId}_.svg";
-        return url;
+        return $"https://i.redd.it/snoovatar/snoo_assets/submissions/{accessoryId}_.svg";
     }
 }

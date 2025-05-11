@@ -1,6 +1,6 @@
 namespace rca.utils;
 
-public static class PriceFormatter
+public static class StringFormatter
 {
     public static string ValueToPrice(this string value)
     {

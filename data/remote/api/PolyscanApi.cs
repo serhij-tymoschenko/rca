@@ -1,3 +1,4 @@
+using System.Net;
 using Newtonsoft.Json;
 using rca.bot;
 using rca.config;
@@ -8,13 +9,13 @@ namespace rca.data.remote.api;
 
 public class PolyscanApi(HttpClient client)
 {
-    private readonly string _query =
+    private readonly string _polyscanQuery =
         $"api?" +
         $"module=account" +
         $"&action=txlist" +
         $"&address={ApiConstants.RedditDeployerAddress}" +
         $"&page=1" +
-        $"&offset={Config.POLYSCAN_OFFSET}" +
+        $"&offset=40" +
         $"&sort=desc" +
         $"&apikey={Config.POLYSCAN_API_KEY}";
 
@@ -25,7 +26,7 @@ public class PolyscanApi(HttpClient client)
             var reqMessage = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(ApiConstants.PolyscanApiEndpoint + _query),
+                RequestUri = new Uri(ApiConstants.PolyscanApiEndpoint + _polyscanQuery),
                 Headers =
                 {
                     { "User-Agent", ApiConstants.UserAgent },

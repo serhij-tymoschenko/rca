@@ -10,7 +10,7 @@ public struct Rca
     public required string Price { get; init; }
     public required string ShopUrl { get; init; }
     public required string ImageUrl { get; init; }
-    public required RcaTraits Traits { get; set; }
+    public required RcaTraits Traits { get; init; }
 }
 
 public struct RcaTraits

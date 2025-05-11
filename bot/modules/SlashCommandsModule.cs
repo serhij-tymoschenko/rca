@@ -16,13 +16,13 @@ public class SlashCommandsModule : ApplicationCommandModule<ApplicationCommandCo
     {
         var user = Context.User as GuildUser;
         var permissions = user.GetPermissions(Context.Guild);
-        
+
         if (permissions.HasFlag(Permissions.Administrator))
         {
             Database.SetServerConfigAsync(Context.Guild.Id, rcaChannelId, contractsChannelId);
             return "Configured";
         }
-        
+
         return "You're not admin";
     }
 }

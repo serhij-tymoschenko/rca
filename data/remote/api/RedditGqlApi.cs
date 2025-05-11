@@ -72,7 +72,7 @@ public class RedditGqlApi(HttpClient client)
             {
                 { "Accept", "text/vnd.reddit.partial+html, text/html;q=0.9" },
                 { "Authorization", authHeader.ToString() },
-                { "User-Agent", ApiConstants.UserAgent },
+                { "User-Agent", ApiConstants.UserAgent }
             },
             Content = reqContent
         };

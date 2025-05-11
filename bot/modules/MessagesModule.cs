@@ -20,15 +20,15 @@ public class MessagesModule(GatewayClient client)
     private string BuildNftMessageSection(Rca rca)
     {
         var nftInfo = "**NFT info:**\n";
-        nftInfo += $"Price: {rca.Price.ValueToPrice()} • " 
+        nftInfo += $"Price: {rca.Price.ValueToPrice()} • "
                    + $"Amount: {rca.Count} • "
-                   + $"Author: [{rca.AuthorName}]({rca.AuthorShopUrl})\n";
+                   + $"Author: [{rca.AuthorName}]({rca.AuthorUrl})\n";
         return nftInfo;
     }
 
     private string BuildAvatarMessageSection(Rca rca)
     {
-        var avatarMessage = $"**[{rca.Title}]({rca.ShopUrl})**\n";
+        var avatarMessage = $"**[{rca.Name}]({rca.ShopUrl})**\n";
         rca.Description
             .Split('\n')
             .ToList()

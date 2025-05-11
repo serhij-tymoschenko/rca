@@ -4,12 +4,12 @@ namespace rca.data.remote.dto;
 
 public class PolyscanDto
 {
-    [JsonProperty("result")] public List<TransactionResult> Result { get; set; }
+    [JsonProperty("result")] public required List<TransactionResult> Result { get; set; }
 
     public class TransactionResult
     {
-        [JsonProperty("methodId")] public string MethodId { get; set; }
+        [JsonProperty("methodId")] public required string MethodId { get; set; }
 
-        [JsonProperty("contractAddress")] public string ContractAddress { get; set; }
+        [JsonProperty("contractAddress")] public required string ContractAddress { get; set; }
     }
 }

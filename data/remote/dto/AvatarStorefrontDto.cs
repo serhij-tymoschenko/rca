@@ -8,72 +8,72 @@ public class AvatarStorefrontDto
 
     public class Data
     {
-        [JsonProperty("avatarStorefront")] public AvatarStorefront AvatarStorefront { get; set; }
+        [JsonProperty("avatarStorefront")] public required AvatarStorefront AvatarStorefront { get; set; }
     }
 
     public class AvatarStorefront
     {
-        [JsonProperty("listings")] public Listings Listings { get; set; }
+        [JsonProperty("listings")] public required Listings Listings { get; set; }
     }
 
     public class Listings
     {
-        [JsonProperty("edges")] public List<Edge> Edges { get; set; }
+        [JsonProperty("edges")] public required List<Edge> Edges { get; set; }
     }
 
     public class Edge
     {
-        [JsonProperty("node")] public Node Node { get; set; }
+        [JsonProperty("node")] public required Node Node { get; set; }
     }
 
     public class Node
     {
-        [JsonProperty("id")] public string Id { get; set; }
+        [JsonProperty("id")] public required string Id { get; set; }
 
         [JsonProperty("totalQuantity")] public int TotalQuantity { get; set; }
 
-        [JsonProperty("productOffer")] public ProductOffer ProductOffer { get; set; }
+        [JsonProperty("productOffer")] public required ProductOffer ProductOffer { get; set; }
 
-        [JsonProperty("artist")] public StorefrontArtist Artist { get; set; }
+        [JsonProperty("artist")] public required StorefrontArtist Artist { get; set; }
 
-        [JsonProperty("item")] public StorefrontItem Item { get; set; }
+        [JsonProperty("item")] public required StorefrontItem Item { get; set; }
     }
 
     public class ProductOffer
     {
-        [JsonProperty("pricePackages")] public List<PricePackage> PricePackages { get; set; }
+        [JsonProperty("pricePackages")] public required List<PricePackage> PricePackages { get; set; }
     }
 
     public class PricePackage
     {
-        [JsonProperty("price")] public string Price { get; set; }
+        [JsonProperty("price")] public required string Price { get; set; }
     }
 
     public class StorefrontArtist
     {
-        [JsonProperty("redditorInfo")] public RedditorInfo RedditorInfo { get; set; }
+        [JsonProperty("redditorInfo")] public required RedditorInfo RedditorInfo { get; set; }
     }
 
     public class RedditorInfo
     {
-        [JsonProperty("displayName")] public string DisplayName { get; set; }
-        [JsonProperty("prefixedName")] public string PrefixedName { get; set; }
+        [JsonProperty("displayName")] public required string DisplayName { get; set; }
+        [JsonProperty("prefixedName")] public required string PrefixedName { get; set; }
     }
 
     public class StorefrontItem
     {
-        [JsonProperty("images")] public List<Image> Images { get; set; }
+        [JsonProperty("images")] public required List<Image> Images { get; set; }
 
-        [JsonProperty("drop")] public Drop Drop { get; set; }
+        [JsonProperty("drop")] public required Drop Drop { get; set; }
 
-        [JsonProperty("benefits")] public Benefits Benefits { get; set; }
+        [JsonProperty("benefits")] public required Benefits Benefits { get; set; }
 
-        [JsonProperty("nft")] public Nft Nft { get; set; }
+        [JsonProperty("nft")] public required Nft Nft { get; set; }
     }
 
     public class Image
     {
-        [JsonProperty("url")] public string Url { get; set; }
+        [JsonProperty("url")] public required string Url { get; set; }
     }
 
     public class Drop
@@ -83,32 +83,32 @@ public class AvatarStorefrontDto
 
     public class Benefits
     {
-        [JsonProperty("avatarOutfit")] public AvatarOutfit AvatarOutfit { get; set; }
+        [JsonProperty("avatarOutfit")] public required AvatarOutfit AvatarOutfit { get; set; }
     }
 
     public class AvatarOutfit
     {
-        [JsonProperty("accessoryIds")] public List<string> AccessoryIds { get; set; }
+        [JsonProperty("accessoryIds")] public required List<string> AccessoryIds { get; set; }
 
-        [JsonProperty("backgroundImage")] public BackgroundImage BackgroundImage { get; set; }
+        [JsonProperty("backgroundImage")] public required BackgroundImage BackgroundImage { get; set; }
 
-        [JsonProperty("preRenderImage")] public PreRenderImage PreRenderImage { get; set; }
+        [JsonProperty("preRenderImage")] public required PreRenderImage PreRenderImage { get; set; }
     }
 
     public class BackgroundImage
     {
-        [JsonProperty("url")] public string Url { get; set; }
+        [JsonProperty("url")] public required string Url { get; set; }
     }
 
     public class PreRenderImage
     {
-        [JsonProperty("url")] public string Url { get; set; }
+        [JsonProperty("url")] public required string Url { get; set; }
     }
 
     public class Nft
     {
-        [JsonProperty("title")] public string Title { get; set; }
+        [JsonProperty("title")] public required string Title { get; set; }
 
-        [JsonProperty("description")] public string Description { get; set; }
+        [JsonProperty("description")] public required string Description { get; set; }
     }
 }

@@ -12,7 +12,8 @@ public static class AvatarStorefrontToRca
         var title = node.Item.Nft.Title;
         var description = node.Item.Nft.Description;
         var authorName = node.Artist.RedditorInfo.DisplayName;
-        var authorShopUrl = $"https://www.reddit.com/avatar/shop/artist/{node.Artist.RedditorInfo.PrefixedName.Substring(2)}";
+        var authorShopUrl =
+            $"https://www.reddit.com/avatar/shop/artist/{node.Artist.RedditorInfo.PrefixedName.Substring(2)}";
         var count = node.Item.Drop.Size;
         var imageUrl = node.Item.Benefits.AvatarOutfit.PreRenderImage.Url;
         var price = node.ProductOffer.PricePackages[0].Price;
@@ -22,10 +23,10 @@ public static class AvatarStorefrontToRca
 
         var rca = new Rca
         {
-            Title = title,
+            Name = title,
             Description = description,
             AuthorName = authorName,
-            AuthorShopUrl = authorShopUrl,
+            AuthorUrl = authorShopUrl,
             Count = count,
             ImageUrl = imageUrl,
             Price = price,
@@ -69,10 +70,7 @@ public static class AvatarStorefrontToRca
                 var matches = Regex.Match(id, AccessoriesRegex.Hair);
                 hair = matches.Groups[1].Value;
 
-                if (matches.Groups[2].Value != "")
-                {
-                    hairBack = matches.Groups[2].Value;
-                }
+                if (matches.Groups[2].Value != "") hairBack = matches.Groups[2].Value;
             }
 
             if (Regex.IsMatch(id, AccessoriesRegex.Hats)) hats = Regex.Match(id, AccessoriesRegex.Hats).Groups[1].Value;

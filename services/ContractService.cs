@@ -21,7 +21,7 @@ public class ContractService(PolyscanApi api, RedditGqlApi gqlApi)
             {
                 var entityIds = await api.GetEntityIdsAsync();
                 if (entityIds == null) throw new Exception("No entityIds fetched");
-                
+
                 if (token == null) throw new Exception("Token not generated");
 
                 var lastIdIndex = entityIds.IndexOf(lastId);

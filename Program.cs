@@ -20,7 +20,7 @@ internal class Program
             UseCookies = true
         };
         var client = new HttpClient(handler);
-        
+
         var redditApi = new RedditApi(client, cookieContainer);
         var redditGqlApi = new RedditGqlApi(client);
         var polyscanApi = new PolyscanApi(client);

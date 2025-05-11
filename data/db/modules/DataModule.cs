@@ -44,7 +44,7 @@ public class DataModule(FirestoreDb db)
         {
             Bot.Log($"Error getting storefront id: {e.Message}");
         }
-        
+
         return "";
     }
 
@@ -87,7 +87,7 @@ public class DataModule(FirestoreDb db)
         {
             Bot.Log($"error getting entity id: {e.Message}");
         }
-        
+
         return "";
     }
 }

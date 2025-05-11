@@ -21,7 +21,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
             Headers =
             {
                 { "Accept", "text/vnd.reddit.partial+html, text/html;q=0.9" },
-                {"User-Agent", "RCA"},
+                { "User-Agent", "RCA" }
             }
         };
 
@@ -104,7 +104,7 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
             var recentlyReleasedHeader = htmlDoc
                 .DocumentNode
                 .Descendants("marketplace-section-header")
-                .FirstOrDefault(header => 
+                .FirstOrDefault(header =>
                     header.Attributes["title-label"].Value.Equals("Recently released"));
 
             if (recentlyReleasedHeader == null) throw new Exception("No recently released header found");

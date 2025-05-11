@@ -5,11 +5,8 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Folder Include="config\" />
-    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Google.Cloud.Firestore" Version="3.10.0" />

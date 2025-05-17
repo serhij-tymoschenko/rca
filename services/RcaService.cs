@@ -125,8 +125,8 @@ public class RcaService(RedditApi api, RedditGqlApi gqlApi, CookieContainer cook
         var initialLastId = await Database.GetLastStorefrontIdAsync();
         SetLastId(initialLastId);
 
-        _ = Task.Run(StartMainPageFetching);
-        _ = Task.Run(StartCategoryFetching);
+        StartMainPageFetching();
+        StartCategoryFetching();
 
         var token = await gqlApi.GetTokenAsync();
 

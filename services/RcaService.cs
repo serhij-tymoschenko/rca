@@ -91,7 +91,7 @@ public class RcaService(RedditApi api, RedditGqlApi gqlApi, CookieContainer cook
                 Bot.Log($"Error fetching main page: {e.Message}");
             }
 
-            await Task.Delay(1200);
+            await Task.Delay(3600);
         }
     }
 
@@ -116,7 +116,7 @@ public class RcaService(RedditApi api, RedditGqlApi gqlApi, CookieContainer cook
                 Bot.Log($"Error fetching category: {e.Message}");
             }
 
-            await Task.Delay(2400);
+            await Task.Delay(4800);
         }
     }
 
@@ -161,7 +161,7 @@ public class RcaService(RedditApi api, RedditGqlApi gqlApi, CookieContainer cook
                 Bot.Log($"Error getting RCAs: {e.Message}");
             }
 
-            await Task.Delay(2400);
+            await Task.Delay(4800);
         }
     }
 }

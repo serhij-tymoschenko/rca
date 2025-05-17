@@ -120,14 +120,8 @@ public class RcaService(RedditApi api, RedditGqlApi gqlApi, CookieContainer cook
         }
     }
 
-    public async Task StartAsync()
+    public async Task StartSendingAsync()
     {
-        var initialLastId = await Database.GetLastStorefrontIdAsync();
-        SetLastId(initialLastId);
-
-        StartMainPageFetching();
-        StartCategoryFetching();
-
         var token = await gqlApi.GetTokenAsync();
 
         while (true)
@@ -163,5 +157,15 @@ public class RcaService(RedditApi api, RedditGqlApi gqlApi, CookieContainer cook
 
             Thread.Sleep(4800);
         }
+    }
+
+    public async Task StartAsync()
+    {
+        var initialLastId = await Database.GetLastStorefrontIdAsync();
+        SetLastId(initialLastId);
+
+        StartMainPageFetching();
+        StartCategoryFetching();
+        StartSendingAsync();
     }
 }

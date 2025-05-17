@@ -1,7 +1,7 @@
 namespace rca.config;
 
 public class Config
-{
+{ 
     public static ulong LOG_CHANNEL_ID = ulong.Parse(Environment.GetEnvironmentVariable("LOG_CHANNEL_ID"));
     public static string DS_API_KEY = Environment.GetEnvironmentVariable("DS_API_KEY");
     public static string POLYSCAN_API_KEY = Environment.GetEnvironmentVariable("POLYSCAN_API_KEY");

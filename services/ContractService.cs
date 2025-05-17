@@ -55,7 +55,7 @@ public class ContractService(PolyscanApi api, RedditGqlApi gqlApi)
                 Bot.Log($"Error getting contracts: {e.Message}");
             }
 
-            Task.Delay(15 * 1000 * 60);
+            Thread.Sleep(15 * 1000 * 60);
         }
     }
 }

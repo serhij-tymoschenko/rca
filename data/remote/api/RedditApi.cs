@@ -135,7 +135,6 @@ public class RedditApi(HttpClient client, CookieContainer cookies)
                     "shop-gallery-data-fetcher?" +
                     "sort=RELEASE_TIME_REVERSE" +
                     "&releasedWithinDays=30" +
-                    "&status=AVAILABLE" +
                     "&lastEnd=cmVsZWFzZWRfYXQ9fGxpc3RpbmdfaWQ9";
         var reqMessage = new HttpRequestMessage
         {

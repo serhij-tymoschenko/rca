@@ -26,7 +26,17 @@ public class MessagesModule(GatewayClient client)
 
     private string BuildAvatarMessageSection(Rca rca)
     {
-        var avatarMessage = $"**[{rca.Name}]({rca.ShopUrl})**\n";
+        var nftId = rca.ShopUrl.Replace("https://www.reddit.com/avatar/shop/product/", "");
+        var androidLink =
+            $"https://reddit.app.link/?$deeplink_path=avatar/shop/product/{nftId}&$android_deeplink_path=reddit/avatar/shop/product/{nftId}";
+        var iosLink = rca.ShopUrl.Replace("https://www.reddit.com", "https://serhij-tymoschenko.github.io/a/#/reddit");
+        var avatarMessage = $"**[{rca.Name}]({rca.ShopUrl})**"
+                            + " • "
+                            + $"**[iOS]({iosLink})**"
+                            + " • "
+                            + $"**[Android]({androidLink})**"
+                            + "\n";
+        
         rca.Description
             .Split('\n')
             .ToList()

@@ -12,7 +12,7 @@ public class ContractService(PolyscanApi api, RedditGqlApi gqlApi)
 
     public async Task StartAsync()
     {
-        var lastId = await Database.GetLastEntityIdAsync();
+        lastId = await Database.GetLastEntityIdAsync();
 
         var token = await gqlApi.GetTokenAsync();
         while (true)

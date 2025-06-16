@@ -29,6 +29,7 @@ public class ContractService(PolyscanApi api, RedditGqlApi gqlApi)
                 if (lastIdIndex != -1)
                     for (var i = 0; i < lastIdIndex; i++)
                         localEntityIds.Add(entityIds[i]);
+                else localEntityIds = entityIds;
 
                 localEntityIds.Reverse();
                 var storefrontIds = await gqlApi.GetStorefrontIdsAsync(token, localEntityIds);

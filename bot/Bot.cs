@@ -89,11 +89,8 @@ public static class Bot
                         channelId = ids.Rca;
                     else
                         channelId = ids.Contract;
-
-                    if (channelId == 1371229728211472384L)
-                    {
-                        PostRcaToGuildAsync(channelId, rca, type);
-                    }
+                    
+                    PostRcaToGuildAsync(channelId, rca, type);
                 }
                 catch (Exception e)
                 {

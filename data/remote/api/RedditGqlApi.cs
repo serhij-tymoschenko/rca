@@ -61,8 +61,7 @@ public class RedditGqlApi(HttpClient client)
             id = "e9865cc4d93d",
             variables = new
             {
-                // ids = entityIds.ToArray()
-                ids = new[] {"nft_eip155:137_724b4d5b52dac4f19ca29d5c8109dc9069c2b8e0_0"}
+                ids = entityIds.ToArray()
             }
         };
         var reqJson = JsonConvert.SerializeObject(reqBody);

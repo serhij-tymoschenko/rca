@@ -2,7 +2,7 @@ namespace rca.utils.constants;
 
 public static class AccessoriesRegex
 {
-    public const string Right = "accessory_(.{11})$";
+    public const string Right = @"\baccessory_(.{11})$";
     public const string Left = "accessory_back_(.{11})$";
     public const string Bottoms = "body_bottom_(.{11})$";
     public const string Tops = "body_(.{11})$";
